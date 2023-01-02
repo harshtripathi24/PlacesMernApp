@@ -57,7 +57,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    "mongodb+srv://admin:Y5QXkxkGDgv4hipV@placeshareapp.dnffe4f.mongodb.net/MyMernPlaces?retryWrites=true&w=majority"
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@placeshareapp.dnffe4f.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
   )
   .then(() => {
     console.log("Database Connected");
